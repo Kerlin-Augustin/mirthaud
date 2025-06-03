@@ -1,12 +1,14 @@
 import './sidebar.css';
 import SidebarButton from "../buttons/SidebarButton"
+import { NavLink } from 'react-router-dom';
+import '../../defaultNavLink.css'
 
 function Sidebar() {
 
   const tabs = [
-    <SidebarButton buttonText="Home" />,
-    <SidebarButton buttonText="Interview" />,
-    <SidebarButton buttonText="Resume" />,
+    <NavLink className="nav-link" to=""><SidebarButton buttonText="Home" /></NavLink>,
+    <NavLink className="nav-link" to="interviews"><SidebarButton buttonText="Interview" /></NavLink>,
+    <NavLink className="nav-link" to="resume"><SidebarButton buttonText="Resume" /></NavLink>,
     <SidebarButton buttonText="My Network" />,
     <SidebarButton buttonText="Messaging" />]
 

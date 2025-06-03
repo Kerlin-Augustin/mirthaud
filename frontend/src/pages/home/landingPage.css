@@ -1,0 +1,157 @@
+.demo-input::placeholder {
+  color: white;
+  opacity: 1; 
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 3em;
+  font-size: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1em;
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.headerAuth {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: .5em;
+  cursor: pointer;
+  margin: 0 1em 0 0'
+}
+
+.nav {
+  margin-right: 2em;
+  font-family: "Martian Mono", sans-serif;
+  cursor: pointer;
+}
+
+.main {
+  background-color: #eef3f9;
+}
+
+.authButtons {
+  display: flex;
+}
+
+.mainSection {
+  background: linear-gradient(135deg, #FF69B4, #FFC0CB);
+  color: white;
+  text-align: center;
+  padding: 10em 0em;
+  margin: 0 2em;
+  border-radius: 1em;
+  font-family: "Martian Mono", sans-serif;
+}
+
+.mainSectionP {
+  margin: 1em;
+  font-size: 24px;
+}
+
+.mainSectionH1 {
+  font-size: 40px
+}
+
+.bodySection {
+  text-align: center;
+  margin-top: 5em;
+  font-family: "Martian Mono", sans-serif;
+}
+
+.bodySectionH2 {
+  margin: 0 10em;
+  font-size: 2rem;
+}
+
+.bodySectionP {
+  font-size: 12px;
+  margin: 1em 30em;
+}
+
+.sectionTail {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  padding: 4em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Martian Mono", sans-serif;
+}
+
+.sectionTailDiv {
+  border-radius: 1em;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+  padding-bottom: 5em;
+  text-align: center;
+  background: white;
+  border: 1px solid lightgray
+}
+
+.sectionTailH3 {
+  margin: 1em 0;
+  color: #FF69B4;
+}
+
+.sectionTailP {
+  margin: 2em 2em;
+  text-decoration: underline;
+}
+
+.sectionTailSecondP {
+  margin: 2em 2em;
+}
+
+.footer {
+  background: linear-gradient(135deg, #FF69B4, #FFC0CB);
+  padding: 5em 0;
+  color: white;
+}
+
+.footerSection {
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+}
+
+.footerSectionDiv {
+  margin-right: 5em;
+}
+
+.footerLogo {
+  margin-right: 35em;
+  margin-left: 5em;
+}
+
+.getStartedButton {
+  color: #fff;
+  background: linear-gradient(135deg, #FF69B4, #FFC0CB);
+  border: 1px solid #fff;
+  cursor: pointer;
+  padding: 1em;
+  border-radius: .5em;
+}
+
+.demoButton {
+  padding: 1em;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 0 .5em .5em 0;
+}
+
+.formInputEmail {
+  padding: 1em 8px;
+  border-radius: .5em 0 0 .5em;
+  border: 1px solid #fff;
+  background: linear-gradient(135deg, #FF69B4, #FFC0CB);
+  color: #fff;
+}

@@ -16,7 +16,8 @@ export const loginController = async (req: Request, res: Response) => {
     const isPasswordAMatch = await bcrypt.compare(password, user.password)
 
     if (!isPasswordAMatch) {
-      res.status(401).json({ message: 'Invalid credentials. Try again.' })
+      res.status(401).send({ message: 'Invalid credentials. Try again.' })
+      return
     }
     
     res.status(200).json({ message: 'Success' })
@@ -24,6 +25,7 @@ export const loginController = async (req: Request, res: Response) => {
   } catch (err) {
     console.error('User does not exist')
     res.status(500).json({ message: 'User does not exist.' })
+    return
   }
 
 }

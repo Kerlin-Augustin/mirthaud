@@ -11,6 +11,13 @@ export const signupController = async (req: Request, res: Response) => {
   const saltRounds = 10
 
   try {
+    const isExistingUser = await UserModel.findOne({ email })
+
+    if (isExistingUser) {
+      res.status(400).json({ message: 'Email already exists.' })
+      return
+    }
+
     hashedPassword = await bcrypt.hash(password, saltRounds)
 
     newUser = new UserModel({

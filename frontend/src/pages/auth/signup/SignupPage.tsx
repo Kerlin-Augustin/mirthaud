@@ -34,7 +34,7 @@ const SignupPage = () => {
         navigate('/dashboard')
       }
     } catch (err: any) {
-      setErrorMessage(err.response.data.error.toUpperCase())
+      setErrorMessage(err.response.data.message)
       console.error(err)
     }
 
@@ -99,7 +99,7 @@ const SignupPage = () => {
           <input
             type="text"
             className='inputFields'
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value.toLowerCase().trim())}
             id='email'
             required
           />

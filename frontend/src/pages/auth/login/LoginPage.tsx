@@ -50,7 +50,7 @@ const LoginPage = () => {
         <input
           type="text"
           className='inputFields'
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value.toLowerCase().trim())}
           id='email'
           required
         />

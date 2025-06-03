@@ -1,10 +1,15 @@
 import { Request, Response } from 'express';
 import { UserModel } from '../../database/models/User.model';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 export const signupController = async (req: Request, res: Response) => {
 
-  const { name, email, accountType, password } = req.body
+  const { username, email, accountType, password } = req.body
+  const JWT_ACCESS_TOKEN = process.env.JWT_ACCESS_TOKEN!
 
   let hashedPassword: string
   let newUser;
@@ -21,14 +26,17 @@ export const signupController = async (req: Request, res: Response) => {
     hashedPassword = await bcrypt.hash(password, saltRounds)
 
     newUser = new UserModel({
-      name,
+      username,
       email,
       accountType,
       password: hashedPassword
     })
 
     await newUser.save()
-    res.status(201).json({ message: 'Success' })
+
+    const accessToken = jwt.sign({ email }, JWT_ACCESS_TOKEN, { expiresIn: '15m' })
+
+    res.status(201).json({ message: 'User Created Successfully', accessToken })
 
   } catch (err) {
     console.error('Failing to create user', err)

@@ -3,11 +3,13 @@ import '../../../defaultNavLink.css'
 import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useAuth } from '../../../context/AuthContext';
 
 const SignupPage = () => {
   const navigate = useNavigate()
+  const { login } = useAuth()
 
-  const [name, setName] = useState('')
+  const [username, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [accountType, setAccountType] = useState('')
@@ -22,7 +24,7 @@ const SignupPage = () => {
     }
 
     const signupInformation = {
-      name,
+      username,
       email,
       accountType,
       password,
@@ -31,6 +33,8 @@ const SignupPage = () => {
     try {
       const res = await axios.post('/api/signup', signupInformation)
       if (res.status === 201) {
+        const { accessToken } = res.data
+        login(email, accessToken, username)
         navigate('/dashboard')
       }
     } catch (err: any) {
@@ -86,7 +90,7 @@ const SignupPage = () => {
           <input
             type="text"
             className='inputFields'
-            onChange={(e) => setName(e.target.value.toLowerCase())}
+            onChange={(e) => setUserName(e.target.value.toLowerCase())}
             id='name'
             required
           />

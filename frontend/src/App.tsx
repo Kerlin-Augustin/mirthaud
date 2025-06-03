@@ -1,10 +1,11 @@
-import Sidebar from "./Sidebar/Sidebar"
+import { useRoutes } from "react-router-dom";
+import routes from './routes/routes'
 
 function App() {
-
+  const routing = useRoutes(routes)
   return (
     <>
-      <Sidebar />
+      {routing}
     </>
   )
 }

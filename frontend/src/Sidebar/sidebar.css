@@ -1,0 +1,43 @@
+.sideBarContainer {
+  background: #FF69B4;
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoAndTabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoText {
+  color: white;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  background: white;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+
+.profileText {
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+}

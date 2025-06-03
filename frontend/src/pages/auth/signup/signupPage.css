@@ -1,0 +1,89 @@
+.primarySection{
+  padding: 5em 15em;
+  background: linear-gradient(135deg, #FF69B4, #FFC0CB);
+  height: 100vh;
+  width: 60%;
+  border-radius: 0 0 1em 1em;
+}
+
+.li{
+  list-style-type: none;
+  color: #fff;
+  margin: 0 0 2em 0;
+}
+
+.h1{
+  font-family: 'Martian Mono', sans-serif;
+  color: #fff;
+  font-size: 35px;
+  margin: 0 0 2em 0;
+}
+
+.logo{
+  margin: 0 0 2em 0;
+  color: #fff;
+  font-size: 25px;
+}
+
+.p{
+  padding: 0 10em 0 0;
+  font-family: "PT Serif Caption", serif;
+}
+
+.h4{
+  margin: 0 0 1em 0;
+  font-family: "PT Serif Caption", serif;
+  font-size: 18px;
+}
+
+.heroForm{
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 35%;
+  padding: 2em;
+  border-radius: 1em;
+  background: linear-gradient(145deg, #ffffff, #f2f5fa);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  margin: 0 10em 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  height: 80%;
+}
+
+.inputFields {
+  width: 80%;
+  height: 2.5em;
+  padding: 0.5em;
+  font-size: 1em;
+  border-radius: 0.5em;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.inputLabel{
+  width: 80%;
+  font-family: "PT Serif Caption";
+  font-size: 0.9em;
+  margin: 0.5em 0 0.2em;
+}
+
+.heroForm button {
+  width: 80%;
+  height: 2.5em;
+  background-image: linear-gradient(135deg, #FF69B4, #FFC0CB);
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.errorMessage {
+  color: rgb(249, 23, 23);
+  text-align: center;
+}

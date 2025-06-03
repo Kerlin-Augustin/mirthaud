@@ -1,5 +1,5 @@
 .sideBarContainer {
-  background: #FF69B4;
+  background: linear-gradient(135deg, #FF69B4, #FFC0CB);
   width: 200px;
   height: 100vh;
   display: flex;

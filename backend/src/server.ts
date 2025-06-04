@@ -4,6 +4,8 @@ import cors from 'cors';
 import { connectToDB } from './config/mongoDatabase';
 import signupRoute from './routes/auth/signupRoute'
 import loginRoute from './routes/auth/loginRoute';
+import { authenticateUserForAPI } from './middleware/authBackendAPIMiddleware';
+import disclaimerRoute from './routes/modal/disclaimerRoute';
 
 dotenv.config()
 
@@ -17,6 +19,8 @@ app.use(cors())
 app.use(express.json());
 app.use('/api', signupRoute)
 app.use('/api', loginRoute)
+app.use(authenticateUserForAPI)
+app.use('/api', disclaimerRoute)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)

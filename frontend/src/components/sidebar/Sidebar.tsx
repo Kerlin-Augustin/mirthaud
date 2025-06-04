@@ -1,9 +1,19 @@
 import './sidebar.css';
+import '../../defaultNavLink.css'
 import SidebarButton from "../buttons/SidebarButton"
 import { NavLink } from 'react-router-dom';
-import '../../defaultNavLink.css'
+import { useAuth } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 function Sidebar() {
+
+  const navigate = useNavigate()
+  const { logout } = useAuth()
+
+  const handleSignout = () => {
+    logout()
+    navigate('/')
+  }
 
   const tabs = [
     <NavLink className="nav-link" to=""><SidebarButton buttonText="Home" /></NavLink>,
@@ -31,7 +41,10 @@ function Sidebar() {
         </div>
       </div>
       <div className="profile">
-        <h3 className="profileText">
+        <h3
+          className="profileText"
+          onClick={handleSignout}
+          >
           Sign Out
         </h3>
       </div>

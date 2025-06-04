@@ -3,6 +3,7 @@ import { UserModel } from '../../database/models/User.model';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv'
+import { MongoServerError } from 'mongodb';
 
 dotenv.config()
 
@@ -19,7 +20,7 @@ export const signupController = async (req: Request, res: Response) => {
     const isExistingUser = await UserModel.findOne({ email })
 
     if (isExistingUser) {
-      res.status(400).json({ message: 'Email already exists.' })
+      res.status(400).json({ message: 'Email already in use. Please use a different email address.' })
       return
     }
 
@@ -29,7 +30,8 @@ export const signupController = async (req: Request, res: Response) => {
       username,
       email,
       accountType,
-      password: hashedPassword
+      password: hashedPassword,
+      hasAcceptedDisclaimer: false,
     })
 
     await newUser.save()

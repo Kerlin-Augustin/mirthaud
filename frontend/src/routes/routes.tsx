@@ -7,6 +7,8 @@ import Home from "../pages/dashboard/home/Home";
 import Interviews from "../pages/dashboard/interviews/Interviews";
 import Resume from "../pages/dashboard/resume/Resume";
 import PrivateRoute from "../context/PrivateRoute";
+import MyNetwork from "../pages/dashboard/myNetwork/MyNetwork";
+import Messaging from "../pages/dashboard/messaging/Messaging";
 
 const routes: RouteObject[] = [
   { path: '/', element: <LandingPage /> },
@@ -23,6 +25,8 @@ const routes: RouteObject[] = [
           { path: '', element: <Home /> },
           { path: 'interviews', element: <Interviews /> },
           { path: 'resume', element: <Resume /> },
+          { path: 'mynetwork', element: <MyNetwork /> },
+          { path: 'messaging', element: <Messaging /> },
         ]
       }
     ]

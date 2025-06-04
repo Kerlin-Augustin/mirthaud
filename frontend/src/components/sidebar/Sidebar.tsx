@@ -9,8 +9,8 @@ function Sidebar() {
     <NavLink className="nav-link" to=""><SidebarButton buttonText="Home" /></NavLink>,
     <NavLink className="nav-link" to="interviews"><SidebarButton buttonText="Interview" /></NavLink>,
     <NavLink className="nav-link" to="resume"><SidebarButton buttonText="Resume" /></NavLink>,
-    <SidebarButton buttonText="My Network" />,
-    <SidebarButton buttonText="Messaging" />]
+    <NavLink className="nav-link" to="mynetwork"><SidebarButton buttonText="My Network" /></NavLink>,
+    <NavLink className="nav-link" to="messaging"><SidebarButton buttonText="Messaging" /></NavLink>]
 
   const allTabs = tabs.map((tab, index) => {
     return (
